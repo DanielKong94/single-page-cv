@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name | Fullstack Developer",
+  title: "Daniel Kong | Team Leader | Fullstack Developer",
   description: "Professional CV of a Fullstack Developer specializing in Laravel, Vue.js, Next.js, and AWS deployment",
   keywords: "fullstack, developer, Laravel, Vue.js, Next.js, AWS, Malaysia",
 };
