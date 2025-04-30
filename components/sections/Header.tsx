@@ -1,6 +1,5 @@
 'use client'
 
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { animate, svg, stagger } from "animejs";
 import BannerTextSvg from "@/components/bannerTextSvg";

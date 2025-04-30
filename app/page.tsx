@@ -5,7 +5,6 @@ import { animate } from 'animejs';
 import Skill from "@/components/sections/Skill";
 import Experience from "@/components/sections/Experience";
 import Education from "@/components/sections/Education";
-import Contact from "@/components/sections/Contact";
 import Projects from "@/components/sections/Projects";
 import Footer from "@/components/sections/Footer";
 import Header from "@/components/sections/Header";

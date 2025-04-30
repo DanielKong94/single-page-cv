@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const SVGComponent = (props: any) => (
+const SVGComponent = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     width="659.01875px"
     height="107px"
