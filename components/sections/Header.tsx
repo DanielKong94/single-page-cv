@@ -1,9 +1,5 @@
 'use client'
 
-import { useEffect, useRef } from "react";
-import { animate, svg, stagger } from "animejs";
-import BannerTextSvg from "@/components/bannerTextSvg";
-
 export default function Header() {  
   return (
       <div className="relative">
