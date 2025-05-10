@@ -1,4 +1,4 @@
-import { animate, onScroll } from "animejs";
+import { animate } from "animejs";
 import { useRef, useEffect } from "react";
 
 export default function Projects(
