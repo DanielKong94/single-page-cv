@@ -1,5 +1,12 @@
 import { useEffect, useRef } from "react";
 import { animate } from 'animejs';
+import { Silkscreen } from "next/font/google";
+
+const silkscreen = Silkscreen({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export default function Skill(
     { sectionsRef }: { sectionsRef: React.RefObject<HTMLDivElement> }
@@ -51,34 +58,37 @@ export default function Skill(
   }, [sectionsRef]);
 
   return (
-    <section className="mb-10">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4" ref={skillsRefTitle}>Skills</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg" ref={skillsRef}>
-            <h3 className="font-medium text-gray-800 dark:text-white">Frontend</h3>
-            <ul className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-            <li>Vue.js / Inertia.js</li>
-            <li>Next.js / React</li>
-            <li>Tailwind CSS</li>
-            <li>JavaScript / TypeScript</li>
+    <section className={`${silkscreen.className} mb-10`}>
+        <h2 className="text-2xl font-semibold text-gray-600 dark:text-white mb-4 hover:text-emerald-400 transition-all duration-300" 
+          ref={skillsRefTitle}>
+            Skills
+        </h2>
+        <div className="grid gap-4">
+        <div className="p-3 rounded-lg" ref={skillsRef}>
+            <h3 className="font-medium text-gray-600 dark:text-white hover:text-emerald-400 transition-all duration-300">Frontend</h3>
+            <ul className="mt-2 text-sm text-gray-700 dark:text-gray-300">
+            <li className="hover:text-emerald-400 transition-all duration-300">Nuxt.js / Vue</li>
+            <li className="hover:text-emerald-400 transition-all duration-300">Next.js / React</li>
+            <li className="hover:text-emerald-400 transition-all duration-300">Tailwind CSS</li>
+            <li className="hover:text-emerald-400 transition-all duration-300">JavaScript / TypeScript</li>
             </ul>
         </div>
-        <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg" ref={backendSkillsRef}>
-            <h3 className="font-medium text-gray-800 dark:text-white">Backend</h3>
-            <ul className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-            <li>Laravel / PHP</li>
-            <li>Node.js</li>
-            <li>MySQL / PostgreSQL</li>
-            <li>RESTful APIs</li>
+        <div className="p-3 rounded-lg" ref={backendSkillsRef}>
+            <h3 className="font-medium text-gray-600 dark:text-white hover:text-emerald-400 transition-all duration-300">Backend</h3>
+            <ul className="mt-2 text-sm text-gray-700 dark:text-gray-300">
+            <li className="hover:text-emerald-400 transition-all duration-300">Laravel / PHP</li>
+            <li className="hover:text-emerald-400 transition-all duration-300">Node.js</li>
+            <li className="hover:text-emerald-400 transition-all duration-300">MySQL / PostgreSQL</li>
+            <li className="hover:text-emerald-400 transition-all duration-300">RESTful APIs</li>
             </ul>
         </div>
-        <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg" ref={devOpsSkillsRef}>
-            <h3 className="font-medium text-gray-800 dark:text-white">DevOps</h3>
-            <ul className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-            <li>AWS (EC2, S3, Route 53)</li>
-            <li>Nginx / Apache</li>
-            <li>Ubuntu Server</li>
-            <li>Cloudflare</li>
+        <div className="p-3 rounded-lg" ref={devOpsSkillsRef}>
+            <h3 className="font-medium text-gray-600 dark:text-white hover:text-emerald-400 transition-all duration-300">DevOps</h3>
+            <ul className="mt-2 text-sm text-gray-700 dark:text-gray-300">
+            <li className="hover:text-emerald-400 transition-all duration-300">AWS (EC2, S3, Route 53)</li>
+            <li className="hover:text-emerald-400 transition-all duration-300">Nginx / Apache</li>
+            <li className="hover:text-emerald-400 transition-all duration-300">Ubuntu Server</li>
+            <li className="hover:text-emerald-400 transition-all duration-300">Cloudflare</li>
             </ul>
         </div>
         </div>

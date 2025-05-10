@@ -31,31 +31,15 @@ export default function Experience({ sectionsRef }: { sectionsRef: React.RefObje
                 duration: 1000,
                 ease: 'linear',
                 alternate: true,
-                autoplay: onScroll({
-                    container: sectionsRef.current,
-                    target: experienceRef.current,
-                    axis: 'y',
-                    enter: 'bottom-=50% top',
-                    leave: 'top bottom',
-                    sync: 'play reverse',
-                    
-                })
+                autoplay: true
             });
 
             animate(experienceRefItems_2.current, {
-                x: ['110%', 0],
+                x: ['-110%', 0],
                 duration: 1000,
                 ease: 'linear',
                 alternate: true,
-                autoplay: onScroll({
-                    container: sectionsRef.current,
-                    target: experienceRef.current,
-                    axis: 'y',
-                    enter: 'bottom-=50% top',
-                    leave: 'top bottom',
-                    sync: 'play reverse',
-                    
-                })
+                autoplay: true
             });
         }
     }, [sectionsRef]);

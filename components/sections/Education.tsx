@@ -1,5 +1,12 @@
 import { useRef, useEffect } from "react";
-import { animate, onScroll } from "animejs";
+import { animate } from "animejs";
+import { Pixelify_Sans } from "next/font/google";
+
+const pixelify_sans = Pixelify_Sans({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export default function Education(
     { sectionsRef }: { sectionsRef: React.RefObject<HTMLDivElement> }
@@ -14,15 +21,7 @@ export default function Education(
                 opacity: [0, 1],
                 duration: 1000,
                 ease: 'easeOutExpo',
-                autoplay: onScroll({
-                    container: sectionsRef.current,
-                    target: educationRef.current,
-                    axis: 'y',
-                    enter: 'bottom-=30% top',
-                    leave: 'top bottom',
-                    sync: 'play reverse',
-                    
-                })
+                autoplay: true
             });
         }
 
@@ -31,15 +30,7 @@ export default function Education(
                 opacity: [0, 1],
                 duration: 1000,
                 ease: 'easeOutExpo',
-                autoplay: onScroll({
-                    container: sectionsRef.current,
-                    target: educationRef.current,
-                    axis: 'y',
-                    enter: 'bottom-=30% top',
-                    leave: 'top bottom',
-                    sync: 'play reverse',
-                    
-                })
+                autoplay: true
             });
         }
 
@@ -47,14 +38,12 @@ export default function Education(
     }, [sectionsRef]);
 
     return (
-        <section className="mb-10" ref={educationRef}>
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4" ref={educationRefTitle}>Education</h2>
+        <section className={`${pixelify_sans.className} mb-10`} ref={educationRef}>
+            <h2 className="text-2xl font-semibold text-gray-600 dark:text-white mb-4 hover:text-amber-800 transition-all duration-300" ref={educationRefTitle}>Education</h2>
             <div ref={educationRefItems}>
-                <div className="flex justify-between mb-1">
-                    <h3 className="font-medium text-gray-900 dark:text-white">Diploma in Computer Science</h3>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">2014- 2017</span>
-                </div>
-                <p className="text-sm text-gray-600 dark:text-gray-300">Southern College, Johor, Malaysia</p>
+                <h3 className="font-medium text-gray-600 dark:text-white hover:text-amber-700 transition-all duration-300">Diploma in Computer Science</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300 hover:text-amber-600 transition-all duration-300">Southern College, Johor, Malaysia</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 hover:text-amber-500 transition-all duration-300">2014- 2017</p>
             </div>
         </section>
     );
