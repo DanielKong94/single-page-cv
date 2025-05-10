@@ -39,11 +39,11 @@ export default function Education(
 
     return (
         <section className={`${pixelify_sans.className} mb-10`} ref={educationRef}>
-            <h2 className="text-2xl font-semibold text-gray-600 dark:text-white mb-4 hover:text-amber-800 transition-all duration-300" ref={educationRefTitle}>Education</h2>
+            <h2 className="text-2xl font-semibold text-gray-600 dark:text-white mb-4 hover:text-amber-400 transition-all duration-300" ref={educationRefTitle}>Education</h2>
             <div ref={educationRefItems}>
-                <h3 className="font-medium text-gray-600 dark:text-white hover:text-amber-700 transition-all duration-300">Diploma in Computer Science</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300 hover:text-amber-600 transition-all duration-300">Southern College, Johor, Malaysia</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400 hover:text-amber-500 transition-all duration-300">2014- 2017</p>
+                <h3 className="font-medium text-gray-600 dark:text-white hover:text-amber-400 transition-all duration-300">Diploma in Computer Science</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300 hover:text-amber-400 transition-all duration-300">Southern College, Johor, Malaysia</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 hover:text-amber-400 transition-all duration-300">2014- 2017</p>
             </div>
         </section>
     );
