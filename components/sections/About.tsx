@@ -34,9 +34,9 @@ export default function About(
       <section className="mb-10" ref={aboutRef}>
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4" ref={aboutRefTitle}>About Me</h2>
           <p className="text-gray-700 dark:text-gray-300" ref={aboutRefContent}>
-          Hi, I&apos;m Daniel, a dedicated fullstack developer from Malaysia with extensive experience in Laravel, Vue.js, and Next.js. 
+          Hi, I&apos;m Daniel, a dedicated fullstack developer from Malaysia with extensive experience in <strong>Laravel, Nuxt.js, and Next.js</strong>. 
           I specialize in building scalable, high-performance web applications and managing seamless deployments using AWS services such as 
-          Lightsail, EC2, S3, and Route 53. Beyond hands-on development, 
+          <strong> Lightsail, EC2, S3, RDS and Route 53</strong>. Beyond hands-on development, 
           I have successfully led teams of developers, driving projects from initial concept to production launch while ensuring code quality, 
           operational stability, and continuous improvement. 
           I am passionate about delivering solutions that are not just functional, but also efficient, secure, and future-ready.

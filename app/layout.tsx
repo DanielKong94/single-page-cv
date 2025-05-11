@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Daniel Kong | Team Leader | Fullstack Developer",
   description: "CV of a Team Leader and Fullstack Developer with a passion for building scalable and efficient systems",
-  keywords: "fullstack, developer, Laravel, Vue.js, Next.js, AWS, Malaysia, Team Leader",
+  keywords: "fullstack, developer, Laravel, Nuxt.js, Next.js, AWS, Malaysia, Team Leader",
 };
 
 export default function RootLayout({
