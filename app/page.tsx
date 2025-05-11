@@ -9,7 +9,6 @@ import Projects from "@/components/sections/Projects";
 import Footer from "@/components/sections/Footer";
 import Header from "@/components/sections/Header";
 import About from "@/components/sections/About";
-import Image from "next/image";
 import { ChevronsUpDown } from 'lucide-react';
 import { X } from 'lucide-react';
 import { Minus } from 'lucide-react';
