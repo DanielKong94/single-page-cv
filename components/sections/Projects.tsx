@@ -79,6 +79,25 @@ export default function Projects(
                     Laravel • Inertia.js • Vue.js • MySQL • AWS • Cloudflare
                   </div>
               </div>
+              <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg" ref={projectsRefItems2}>
+                  <h3 className="font-medium text-gray-900 dark:text-white mb-2">Flories System</h3>
+                  <ul className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                    <li>
+                      - Connect with Shopify webhook and api.
+                    </li>
+                    <li>
+                      - Client able to create order and manage order status.
+                    </li>
+                    <li>
+                      - Client able to manage User, Role, Lead, Product, Payment data in each workspace.
+                    </li>
+                  </ul>
+                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                    <span>Built with:</span>
+                    <br />
+                    Laravel • MySQL • AWS • Cloudflare
+                  </div>
+              </div>
             </div>
         </section>
     );
