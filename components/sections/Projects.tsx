@@ -48,13 +48,13 @@ export default function Projects(
                   <h3 className="font-medium text-gray-900 dark:text-white mb-2">Courier Management System</h3>
                   <ul className="mt-2 text-sm text-gray-600 dark:text-gray-300">
                     <li>
-                      - Client able to manage their package status.
+                      - Client able to manage their package status and track their package.
                     </li>
                     <li>
                       - Link api with external courier api.
                     </li>
                   </ul>
-                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-2">
                     <span>Built with:</span>
                     <br />
                     Laravel • Inertia.js • Vue.js • MySQL • AWS • Cloudflare
@@ -73,7 +73,7 @@ export default function Projects(
                       - Client able to manage User, Role, Lead, Product, Payment data in each workspace.
                     </li>
                   </ul>
-                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-2">
                     <span>Built with:</span>
                     <br />
                     Laravel • Inertia.js • Vue.js • MySQL • AWS • Cloudflare
@@ -83,16 +83,16 @@ export default function Projects(
                   <h3 className="font-medium text-gray-900 dark:text-white mb-2">Flories System</h3>
                   <ul className="mt-2 text-sm text-gray-600 dark:text-gray-300">
                     <li>
-                      - Connect with Shopify webhook and api.
+                      - Connect with Shopify webhook and api, update order and product data.
                     </li>
                     <li>
-                      - Client able to create order and manage order status.
+                      - Client able to create new order and manage order status.
                     </li>
                     <li>
-                      - Client able to manage User, Role, Lead, Product, Payment data in each workspace.
+                      - Client able to manage User, Role, Lead, Product.
                     </li>
                   </ul>
-                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-2">
                     <span>Built with:</span>
                     <br />
                     Laravel • MySQL • AWS • Cloudflare
