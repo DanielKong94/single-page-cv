@@ -1,5 +1,6 @@
-import { useRef, useEffect } from "react";
-import { animate } from "animejs";
+'use client';
+
+import { useAnimateOnView } from '@/hooks/useAnimateOnView';
 import { Pixelify_Sans } from "next/font/google";
 
 const pixelify_sans = Pixelify_Sans({
@@ -8,43 +9,43 @@ const pixelify_sans = Pixelify_Sans({
   display: 'swap',
 });
 
-export default function Education(
-    { sectionsRef }: { sectionsRef: React.RefObject<HTMLDivElement> }
-) {
-    const educationRef = useRef<HTMLDivElement>(null);
-    const educationRefTitle = useRef<HTMLHeadingElement>(null);
-    const educationRefItems = useRef<HTMLDivElement>(null);
+export default function Education() {
+  const titleRef = useAnimateOnView<HTMLHeadingElement>({
+    animationProps: {
+      translateY: [20, 0],
+      ease: 'outExpo',
+      duration: 1000,
+    },
+  });
 
-    useEffect(() => {
-        if (educationRefTitle.current && educationRef.current) {
-            animate(educationRefTitle.current, {
-                opacity: [0, 1],
-                duration: 1000,
-                ease: 'easeOutExpo',
-                autoplay: true
-            });
-        }
+  const contentRef = useAnimateOnView<HTMLDivElement>({
+    animationProps: {
+      translateY: [20, 0],
+      ease: 'outCubic',
+      duration: 900,
+    },
+    delay: 150,
+  });
 
-        if (educationRefItems.current && educationRef.current) {
-            animate(educationRefItems.current, {
-                opacity: [0, 1],
-                duration: 1000,
-                ease: 'easeOutExpo',
-                autoplay: true
-            });
-        }
-
-
-    }, [sectionsRef]);
-
-    return (
-        <section className={`${pixelify_sans.className} mb-10`} ref={educationRef}>
-            <h2 className="text-2xl font-semibold text-gray-600 dark:text-white mb-4 hover:text-amber-400 transition-all duration-300" ref={educationRefTitle}>Education</h2>
-            <div ref={educationRefItems}>
-                <h3 className="font-medium text-gray-600 dark:text-white hover:text-amber-400 transition-all duration-300">Diploma in Computer Science</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300 hover:text-amber-400 transition-all duration-300">Southern College, Johor, Malaysia</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400 hover:text-amber-400 transition-all duration-300">2014- 2017</p>
-            </div>
-        </section>
-    );
+  return (
+    <section className={`${pixelify_sans.className} mb-10`}>
+      <h2
+        className="text-2xl font-semibold text-gray-600 dark:text-white mb-4 hover:text-amber-400 transition-all duration-300"
+        ref={titleRef}
+      >
+        Education
+      </h2>
+      <div ref={contentRef}>
+        <h3 className="font-medium text-gray-600 dark:text-white hover:text-amber-400 transition-all duration-300">
+          Diploma in Computer Science
+        </h3>
+        <p className="text-sm text-gray-600 dark:text-gray-300 hover:text-amber-400 transition-all duration-300">
+          Southern College, Johor, Malaysia
+        </p>
+        <p className="text-sm text-gray-500 dark:text-gray-400 hover:text-amber-400 transition-all duration-300">
+          2014- 2017
+        </p>
+      </div>
+    </section>
+  );
 }

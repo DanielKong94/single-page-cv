@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/next"
+// import Navigation from "@/components/Navigation";
+import { Rocket } from 'lucide-react';
+import { Bot } from 'lucide-react';
+import { GlobeLock } from 'lucide-react';
+import { HardDrive } from 'lucide-react';
+import Footer from "@/components/sections/Footer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -68,9 +74,26 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main>
+        {/* <Navigation /> */}
+        <main className="min-h-screen bg-gradient-to-br from-slate-900 to-gray-900 py-6 px-4 sm:px-6 lg:px-8 font-mono pt-24">
           {children}
+
+          <Footer />
         </main>
+
+        {/* Developer technology icons floating in background */}
+        <div className="fixed bottom-20 right-30 opacity-20 w-20 h-20 pointer-events-none">
+          <HardDrive className="w-20 h-20 text-gray-500" />
+        </div>
+        <div className="fixed top-50 left-5 opacity-20 w-20 h-20 pointer-events-none">
+          <Bot className="w-20 h-20 text-gray-500" />
+        </div>
+        <div className="fixed top-40 right-10 opacity-20 w-20 h-20 pointer-events-none">
+          <GlobeLock className="w-20 h-20 text-gray-500" />
+        </div>
+        <div className="fixed bottom-50 left-40 opacity-20 w-20 h-20 pointer-events-none">
+          <Rocket className="w-20 h-20 text-gray-500" />
+        </div>
         <SpeedInsights />
         <Analytics />
       </body>
