@@ -2,6 +2,7 @@
 
 import { useAnimateOnView, useStaggerOnView } from '@/hooks/useAnimateOnView';
 import { Silkscreen } from "next/font/google";
+import { skillGroups } from '@/lib/content/skills';
 
 const silkscreen = Silkscreen({
   weight: '400',
@@ -35,33 +36,20 @@ export default function Skill() {
         Skills
       </h2>
       <div className="grid gap-4" ref={skillsContainerRef}>
-        <div className="p-3 rounded-lg skill-group">
-          <h3 className="font-medium text-gray-600 dark:text-white hover:text-emerald-400 transition-all duration-300">Frontend</h3>
-          <ul className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-            <li className="hover:text-emerald-400 transition-all duration-300">Nuxt.js / Vue</li>
-            <li className="hover:text-emerald-400 transition-all duration-300">Next.js / React</li>
-            <li className="hover:text-emerald-400 transition-all duration-300">Tailwind CSS</li>
-            <li className="hover:text-emerald-400 transition-all duration-300">JavaScript / TypeScript</li>
-          </ul>
-        </div>
-        <div className="p-3 rounded-lg skill-group">
-          <h3 className="font-medium text-gray-600 dark:text-white hover:text-emerald-400 transition-all duration-300">Backend</h3>
-          <ul className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-            <li className="hover:text-emerald-400 transition-all duration-300">Laravel / PHP</li>
-            <li className="hover:text-emerald-400 transition-all duration-300">Node.js</li>
-            <li className="hover:text-emerald-400 transition-all duration-300">MySQL / PostgreSQL</li>
-            <li className="hover:text-emerald-400 transition-all duration-300">RESTful APIs</li>
-          </ul>
-        </div>
-        <div className="p-3 rounded-lg skill-group">
-          <h3 className="font-medium text-gray-600 dark:text-white hover:text-emerald-400 transition-all duration-300">DevOps</h3>
-          <ul className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-            <li className="hover:text-emerald-400 transition-all duration-300">AWS (EC2, S3, Route 53)</li>
-            <li className="hover:text-emerald-400 transition-all duration-300">Nginx / Apache</li>
-            <li className="hover:text-emerald-400 transition-all duration-300">Ubuntu Server</li>
-            <li className="hover:text-emerald-400 transition-all duration-300">Cloudflare</li>
-          </ul>
-        </div>
+        {skillGroups.map((group) => (
+          <div className="p-3 rounded-lg skill-group" key={group.slug}>
+            <h3 className="font-medium text-gray-600 dark:text-white hover:text-emerald-400 transition-all duration-300">
+              {group.name}
+            </h3>
+            <ul className="mt-2 text-sm text-gray-700 dark:text-gray-300">
+              {group.items.map((item) => (
+                <li className="hover:text-emerald-400 transition-all duration-300" key={item}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -2,6 +2,7 @@
 
 import { useAnimateOnView } from '@/hooks/useAnimateOnView';
 import { Pixelify_Sans } from "next/font/google";
+import { education } from '@/lib/content/education';
 
 const pixelify_sans = Pixelify_Sans({
   weight: '400',
@@ -36,15 +37,19 @@ export default function Education() {
         Education
       </h2>
       <div ref={contentRef}>
-        <h3 className="font-medium text-gray-600 dark:text-white hover:text-amber-400 transition-all duration-300">
-          Diploma in Computer Science
-        </h3>
-        <p className="text-sm text-gray-600 dark:text-gray-300 hover:text-amber-400 transition-all duration-300">
-          Southern College, Johor, Malaysia
-        </p>
-        <p className="text-sm text-gray-500 dark:text-gray-400 hover:text-amber-400 transition-all duration-300">
-          2014- 2017
-        </p>
+        {education.map((entry) => (
+          <div key={entry.slug}>
+            <h3 className="font-medium text-gray-600 dark:text-white hover:text-amber-400 transition-all duration-300">
+              {entry.qualification}
+            </h3>
+            <p className="text-sm text-gray-600 dark:text-gray-300 hover:text-amber-400 transition-all duration-300">
+              {entry.institution}
+            </p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 hover:text-amber-400 transition-all duration-300">
+              {entry.period}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );

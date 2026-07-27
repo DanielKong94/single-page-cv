@@ -1,6 +1,8 @@
 'use client';
 
 import { useAnimateOnView } from '@/hooks/useAnimateOnView';
+import RichTextView from '@/components/RichTextView';
+import { about } from '@/lib/content/about';
 
 export default function About() {
   const titleRef = useAnimateOnView<HTMLHeadingElement>({
@@ -28,15 +30,11 @@ export default function About() {
       >
         About Me
       </h2>
-      <p className="text-gray-700 dark:text-gray-300" ref={contentRef}>
-        Hi, I&apos;m Daniel, a dedicated fullstack developer from Malaysia with extensive experience in{' '}
-        <strong>Laravel, Nuxt.js, and Next.js</strong>.
-        I specialize in building scalable, high-performance web applications and managing seamless deployments using AWS services such as{' '}
-        <strong>Lightsail, EC2, S3, RDS and Route 53</strong>. Beyond hands-on development,
-        I have successfully led teams of developers, driving projects from initial concept to production launch while ensuring code quality,
-        operational stability, and continuous improvement.
-        I am passionate about delivering solutions that are not just functional, but also efficient, secure, and future-ready.
-      </p>
+      {about.map((paragraph, i) => (
+        <p className="text-gray-700 dark:text-gray-300" ref={i === 0 ? contentRef : undefined} key={i}>
+          <RichTextView value={paragraph} />
+        </p>
+      ))}
     </section>
   );
 }
