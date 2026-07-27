@@ -101,6 +101,13 @@ describe('toChunks', () => {
     );
   });
 
+  it('assembles about chunk text exactly', () => {
+    const about = chunks.find((c) => c.id === 'about:0');
+    expect(about!.text).toBe(
+      "About Daniel Kong: Hi, I'm Daniel, a dedicated fullstack developer from Malaysia with extensive experience in Laravel, Nuxt.js, and Next.js. I specialize in building scalable, high-performance web applications and managing seamless deployments using AWS services such as Lightsail, EC2, S3, RDS and Route 53. Beyond hands-on development, I have successfully led teams of developers, driving projects from initial concept to production launch while ensuring code quality, operational stability, and continuous improvement. I am passionate about delivering solutions that are not just functional, but also efficient, secure, and future-ready."
+    );
+  });
+
   it('covers every chunk type with a full-text assertion above', () => {
     // Guard: if a new ChunkType is added, this fails until a full-text test exists for it.
     expect(new Set(chunks.map((c) => c.type))).toEqual(
