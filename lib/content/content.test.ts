@@ -16,6 +16,16 @@ describe('about', () => {
     const full = about.map(plainText).join(' ');
     expect(full).toContain('Laravel, Nuxt.js, and Next.js');
   });
+
+  it('contains the complete first paragraph with exact text', () => {
+    const expectedText = "Hi, I'm Daniel, a dedicated fullstack developer from Malaysia with extensive experience in Laravel, Nuxt.js, and Next.js. I specialize in building scalable, high-performance web applications and managing seamless deployments using AWS services such as Lightsail, EC2, S3, RDS and Route 53. Beyond hands-on development, I have successfully led teams of developers, driving projects from initial concept to production launch while ensuring code quality, operational stability, and continuous improvement. I am passionate about delivering solutions that are not just functional, but also efficient, secure, and future-ready.";
+    expect(plainText(about[0])).toBe(expectedText);
+  });
+
+  it('preserves both strong segments in about', () => {
+    expect(about[0][1]).toEqual({ text: 'Laravel, Nuxt.js, and Next.js', strong: true });
+    expect(about[0][3]).toEqual({ text: 'Lightsail, EC2, S3, RDS and Route 53', strong: true });
+  });
 });
 
 describe('education', () => {
@@ -23,6 +33,15 @@ describe('education', () => {
     const diploma = education.find((e) => e.slug === 'diploma-in-computer-science');
     expect(diploma).toBeDefined();
     expect(diploma!.institution).toBe('Southern College, Johor, Malaysia');
+  });
+
+  it('has the complete education entry with all fields', () => {
+    expect(education[0]).toEqual({
+      slug: 'diploma-in-computer-science',
+      qualification: 'Diploma in Computer Science',
+      institution: 'Southern College, Johor, Malaysia',
+      period: '2014 - 2017',
+    });
   });
 });
 
@@ -40,6 +59,21 @@ describe('skillGroups', () => {
     for (const group of skillGroups) {
       expect(group.items.length).toBeGreaterThan(0);
     }
+  });
+
+  it('has the complete Frontend skill items', () => {
+    const frontend = skillGroups.find((g) => g.slug === 'frontend');
+    expect(frontend!.items).toEqual(['Nuxt.js / Vue', 'Next.js / React', 'Tailwind CSS', 'JavaScript / TypeScript']);
+  });
+
+  it('has the complete Backend skill items', () => {
+    const backend = skillGroups.find((g) => g.slug === 'backend');
+    expect(backend!.items).toEqual(['Laravel / PHP', 'Node.js', 'MySQL / PostgreSQL', 'RESTful APIs']);
+  });
+
+  it('has the complete DevOps skill items', () => {
+    const devops = skillGroups.find((g) => g.slug === 'devops');
+    expect(devops!.items).toEqual(['AWS (EC2, S3, Route 53)', 'Nginx / Apache', 'Ubuntu Server', 'Cloudflare']);
   });
 });
 
