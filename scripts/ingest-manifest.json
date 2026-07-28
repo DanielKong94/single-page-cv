@@ -1,1 +1,15 @@
-{ "ids": [] }
+{
+  "ids": [
+    "about:0",
+    "experience:flow-digital:team-leader",
+    "experience:flow-digital:senior-fullstack-developer",
+    "experience:excel-technology:full-stack-developer-freelance",
+    "project:courier-management-system",
+    "project:flories-ecommerce-system",
+    "project:saas-crm-system",
+    "skills:frontend",
+    "skills:backend",
+    "skills:devops",
+    "education:diploma-in-computer-science"
+  ]
+}
