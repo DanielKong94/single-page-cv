@@ -12,9 +12,12 @@
     "ingest": "tsx --env-file=.env.local scripts/ingest.ts"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^4.0.21",
+    "@ai-sdk/react": "^4.0.41",
     "@radix-ui/react-slot": "^1.2.0",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
+    "ai": "^7.0.38",
     "animejs": "^4.0.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
