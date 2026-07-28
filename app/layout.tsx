@@ -8,6 +8,7 @@ import { Bot } from 'lucide-react';
 import { GlobeLock } from 'lucide-react';
 import { HardDrive } from 'lucide-react';
 import Footer from "@/components/sections/Footer";
+import ChatBubble from "@/components/chat/ChatBubble";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -94,6 +95,7 @@ export default function RootLayout({
         <div className="fixed bottom-50 left-40 opacity-20 w-20 h-20 pointer-events-none">
           <Rocket className="w-20 h-20 text-gray-500" />
         </div>
+        <ChatBubble />
         <SpeedInsights />
         <Analytics />
       </body>
