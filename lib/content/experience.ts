@@ -8,8 +8,8 @@ export const companies: Company[] = [
     roles: [
       {
         slug: 'team-leader',
-        title: 'Team Leader / Senior Tech Lead',
-        period: '2025 - Present',
+        title: 'Team Leader / Tech Lead',
+        period: 'Jan 2025 - Sept 2026',
         bullets: [
           [
             { text: 'Orchestrated development lifecycles', strong: true },
@@ -32,7 +32,7 @@ export const companies: Company[] = [
       {
         slug: 'senior-fullstack-developer',
         title: 'Senior Fullstack Developer',
-        period: '2022 - 2024',
+        period: 'May 2022 - Dec 2024',
         bullets: [
           [
             { text: 'Engineered scalable full-stack solutions', strong: true },
@@ -58,7 +58,7 @@ export const companies: Company[] = [
       {
         slug: 'full-stack-developer-freelance',
         title: 'Full Stack Developer (Freelance)',
-        period: '2018 - 2022',
+        period: 'Jan 2017 - May 2022',
         bullets: [
           [
             { text: 'Developed custom-tailored web solutions', strong: true },
